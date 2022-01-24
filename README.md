@@ -56,7 +56,7 @@ nbgv install
 }
 ```
 
-Пример вывода программы:
+Пример вывода программы. До коммита:
 
 ```
 File:             D:\Projects\Sandbox\Application\bin\Debug\net6.0\Library.dll
@@ -74,3 +74,23 @@ SpecialBuild:     False
 Language:         Независимо от языка
 
 ```
+
+После коммита:
+
+```
+File:             D:\Projects\Sandbox\Application\bin\Debug\net6.0\Library.dll
+InternalName:     Library.dll
+OriginalFilename: Library.dll
+FileVersion:      1.0.1.14288
+FileDescription:  Library
+Product:          Library
+ProductVersion:   1.0.1-beta+d03748a4a4
+Debug:            False
+Patched:          False
+PreRelease:       False
+PrivateBuild:     False
+SpecialBuild:     False
+Language:         Независимо от языка
+```
+
+Каждый коммит будет увеличивать номер версии.
