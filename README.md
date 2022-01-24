@@ -94,3 +94,35 @@ Language:         Независимо от языка
 ```
 
 Каждый коммит будет увеличивать номер версии.
+
+Кроме того, в сборку автоматически добавляется класс `ThisAssembly` следующего вида (конкретные номера версий и версия сборки приведены лишь в иллюстративных целях):
+
+```c#
+internal sealed partial class ThisAssembly 
+{
+    internal const string AssemblyVersion = "1.0";
+    internal const string AssemblyFileVersion = "1.0.24.15136";
+    internal const string AssemblyInformationalVersion = "1.0.24-alpha+g9a7eb6c819";
+    internal const string AssemblyName = "Microsoft.VisualStudio.Validation";
+    internal const string PublicKey = @"0024000004800000940000...reallylongkey..2342394234982734928";
+    internal const string PublicKeyToken = "b03f5f7f11d50a3a";
+    internal const string AssemblyTitle = "Microsoft.VisualStudio.Validation";
+    internal const string AssemblyConfiguration = "Debug";
+    internal const string RootNamespace = "Microsoft";
+}
+```
+
+Когда мы готовы к релизу новой версии, подаем команду
+
+```shell
+nbgv prepare-release
+```
+
+на что утилита нам отвечает
+
+```
+v1.0 branch now tracks v1.0 stabilization and release.
+main branch now tracks v1.1-alpha development.
+```
+
+Пушим и радуемся! Согласитесь, очень удобно!
