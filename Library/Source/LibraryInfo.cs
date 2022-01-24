@@ -1,9 +1,12 @@
 using System;
+using System.Diagnostics;
 
 public static class LibraryInfo
 {
-    public static Version? GetLibraryInfo()
+    public static FileVersionInfo GetLibraryInfo()
     {
-        return typeof (LibraryInfo).Assembly.GetName().Version;
+        var assembly = typeof (LibraryInfo).Assembly;
+        var versionInfo = FileVersionInfo.GetVersionInfo (assembly.Location);
+        return versionInfo;
     }
 }
